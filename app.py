@@ -10,14 +10,14 @@ def hello_world():  # put application's code here
 
 
 @app.route('/up')
-def motor_up():
+def up():
     motor_up()
     return 'Motor Moved Up!'
 
 
 @app.route('/down')
-def motor_up():
-    motor_up()
+def down():
+    motor_down()
     return 'Motor Moved Down!'
 
 
