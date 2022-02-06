@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from motorcontrol import motor_up, motor_down
 
 app = Flask(__name__)
@@ -6,19 +6,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():  # put application's code here
-    return 'Hello World!'
+    return render_template('homepage.html')
 
 
 @app.route('/up')
 def up():
     motor_up()
-    return 'Motor Moved Up!'
+    return {
+        'success': 'true'
+    }
 
 
 @app.route('/down')
 def down():
     motor_down()
-    return 'Motor Moved Down!'
+    return {
+        'success': 'true'
+    }
 
 
 if __name__ == '__main__':
